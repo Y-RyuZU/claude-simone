@@ -2,7 +2,7 @@
 
 Follow these instructions from top to bottom.
 
-## Create a TODO with EXACTLY these 6 items
+## Create a TODO with EXACTLY these 7 items
 
 1. Parse arguments and analyze git status
 2. Review changes and group by logical commits
@@ -10,6 +10,7 @@ Follow these instructions from top to bottom.
 4. Check if user approval is necessary
 5. Execute approved commits
 6. Report commit results
+7. Explore and execute next task if TaskID was provided
 
 ---
 
@@ -139,3 +140,38 @@ Provide summary:
 - **Files Committed**: Total count of files committed
 - **Remaining Changes**: Any uncommitted changes still pending
 - **Repository Status**: Current git status after commits
+
+## 7 · Explore and execute next task if TaskID was provided
+
+**Only execute this step if a TaskID was provided in the arguments**
+
+### Task Exploration Process
+
+1. **Identify the completed task**: Use the TaskID from the arguments to understand what was just completed
+2. **Search for next task**:
+   - Look in `.simone/03_SPRINTS/` directory for sprint tasks
+   - Look in `.simone/04_GENERAL_TASKS/` directory for general tasks
+   - Find the next logical task in sequence
+   - Consider task dependencies and completion status
+
+3. **Analyze next task**:
+   - Read the task file to understand requirements
+   - Check task status and dependencies
+   - Verify if it's ready to be executed
+
+4. **Reference do_task command**:
+   - Consult `.claude/commands/simone/do_task` for execution guidelines
+   - Follow the established task execution process
+   - Ensure proper task context and environment setup
+
+5. **Execute the next task**:
+   - Use the appropriate command or process as defined in `do_task`
+   - Maintain consistency with the project's task management workflow
+   - Report the start of the next task execution
+
+### Implementation Notes
+
+- **Sequential Logic**: Focus on the next task in the same sprint or general task sequence
+- **Dependency Check**: Ensure all prerequisites for the next task are met
+- **Context Continuity**: Maintain the context from the previous task completion
+- **User Notification**: Inform the user about the next task being initiated
